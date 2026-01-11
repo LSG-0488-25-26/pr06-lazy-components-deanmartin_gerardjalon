@@ -21,12 +21,12 @@ fun MyAppNavHost(modifier: Modifier, navController: NavHostController) {
         composable(
             Routes.DetailsView.route,
             arguments = listOf(
-                navArgument("monsterIndex") { type = NavType.StringType }
+                navArgument("monsterId") { type = NavType.StringType }
             )
         ) { backStackEntry ->
             DetailScreen(
                 navController,
-                backStackEntry.arguments?.getString("monsterIndex").orEmpty(),
+                backStackEntry.arguments?.getString("monsterId").orEmpty(),
                 modifier
             )
         }

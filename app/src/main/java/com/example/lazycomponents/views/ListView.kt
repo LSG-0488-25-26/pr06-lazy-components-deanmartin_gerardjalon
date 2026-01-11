@@ -16,8 +16,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import com.example.lazycomponents.R
-import com.example.lazycomponents.model.Monster
-import com.example.lazycomponents.nav.Routes
+
 
 
 @Composable
@@ -34,10 +33,8 @@ fun ListView (modifier: Modifier, navController: NavController) {
             .padding(vertical = 30.dp)
             .fillMaxHeight()
     ) {
-        items(getMonsterList()){ Monster ->
-            MonsterItem (monster = Monster){
-                navController.navigate(Routes.DetailsView.createRoute(Monster.index))
-            }
+        items(getMonsterList()) { monster ->
+            MonsterItem(monster = monster, navController = navController)
         }
     }
 }

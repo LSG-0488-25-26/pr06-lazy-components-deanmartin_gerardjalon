@@ -18,12 +18,17 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.lazycomponents.nav.Routes
+
 
 @Composable
-fun MonsterItem (monster: Monster, onSelectedItem: (String) -> Unit) {
+fun MonsterItem (monster: Monster, navController: NavController) {
     Card(modifier = Modifier
-            .fillMaxWidth()
-            .clickable { onSelectedItem(monster.index) }
+        .fillMaxWidth()
+        .clickable {
+            navController.navigate(Routes.DetailsView.createRoute(monster.index))
+        }
     ) {
         Row {
             Image(
