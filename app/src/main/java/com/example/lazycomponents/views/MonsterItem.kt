@@ -22,7 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 fun MonsterItem (monster: Monster, onSelectedItem: (String) -> Unit) {
     Card(modifier = Modifier
             .fillMaxWidth()
-            .clickable { onSelectedItem(monster.name) }
+            .clickable { onSelectedItem(monster.index) }
     ) {
         Row {
             Image(
