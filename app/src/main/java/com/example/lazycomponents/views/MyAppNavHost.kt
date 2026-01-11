@@ -1,6 +1,11 @@
 package com.example.lazycomponents.views
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import com.example.lazycomponents.nav.Routes
 
 @Composable
@@ -21,7 +26,6 @@ fun MyAppNavHost(modifier: Modifier, navController: NavHostController) {
         ) { backStackEntry ->
             DetailScreen(
                 navController,
-                // Per si de cas el nom del pokémon és buit, li passarem una cadena de caràcters buida al cridar la view
                 backStackEntry.arguments?.getString("pokemonName").orEmpty(),
                 modifier
             )
