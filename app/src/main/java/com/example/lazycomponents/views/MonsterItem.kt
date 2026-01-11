@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun MonsterItem (monster: Monster, onSelectedItem: (String) -> Unit) {
@@ -36,7 +37,7 @@ fun MonsterItem (monster: Monster, onSelectedItem: (String) -> Unit) {
             Column {
                 Text(
                     text = monster.name,
-                    fontSize = MaterialTheme.typography.bodyLarge.fontSize,
+                    fontSize = 22.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
